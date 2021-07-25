@@ -165,7 +165,19 @@ def prak11():
 
 
 def prak12():
-    pass
+    input_list = list(input("Write your list: "))
+    input_element = str(input("Write your element to check: "))
+
+    count = 0
+
+    for symbol in input_list:
+        if input_element == symbol:
+            count += 1
+
+    if count > 1:
+        print("This element is duplicated in list")
+    else:
+        print("This element isn`t duplicated in list")
 
 
-prak10()
+prak12()
