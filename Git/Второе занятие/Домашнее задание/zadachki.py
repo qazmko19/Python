@@ -147,12 +147,12 @@ def prak10():
         elif num_a == num_b:
             print("The numbers entered by you are divided by each other")
         elif num_a < num_b:
-            for num in range(num_a, 1, -1):
+            for num in range(num_a, 0, -1):
                 if num_a % num == 0 and num_b % num == 0:
                     print("Greatest common divisor for numbers {} and {} is {}".format(num_a, num_b, num))
                     break
         elif num_b < num_a:
-            for num in range(num_b, 1, -1):
+            for num in range(num_b, 0, -1):
                 if num_a % num == 0 and num_b % num == 0:
                     print("Greatest common divisor for numbers {} and {} is {}".format(num_a, num_b, num))
                     break
@@ -180,4 +180,92 @@ def prak12():
         print("This element isn`t duplicated in list")
 
 
-prak12()
+def prak13():
+    len_list = int(input("How long do you want the list: "))
+    lst = []
+
+    for i in range(1, len_list):
+        lst.append(random.randint(1, 50))
+
+    print("Your list is:", lst)
+
+    for index, value in enumerate(lst):
+        if value == 20:
+            lst[index] = 200
+            break
+
+    if 200 in lst:
+        print("I found 20 on the list and replaced it with 200. Your list now is:", lst)
+    else:
+        print("I did not find 20 on the list")
+
+
+def prak14():
+    input_list = list(input("Write your list: "))
+    input_len = len(input_list)
+
+    for index, value in enumerate(input_list):
+        if value == "" or value == " ":
+            input_list.pop(index)
+
+    output_len = len(input_list)
+
+    if output_len < input_len:
+        print("Your list without spaces now is:", input_list)
+    else:
+        print("Your list did not have spaces, so now it is:", input_list)
+
+
+print("1. Вы принимаете от пользователя последовательность чисел, разделённых запятой. Составьте список. (Список из "
+      "чисел(без запятых)).")
+print("2. Выведите первый и последний элемент списка.")
+print("3. При заданном целом числе n посчитайте n + nn + nnn.")
+print("4. Напишите программу, которая выводит чётные числа из заданного списка и останавливается, если встречает "
+      "число 237.")
+print("5. Напишите программу, которая принимает два списка и выводит все элементы первого, которых нет во втором.")
+print("6. Сложите цифры целого числа.")
+print("7. Посчитайте, сколько раз символ встречается в строке.")
+print("8. Реверс списка")
+print("9. Функция очереди (написать функцию которая принимает список и добавляет в него элементы как в очередь).")
+print("10. Наибольший общий делитель.")
+print("11. Циклический сдвиг.")
+print("12. Проверить, есть ли в последовательности дубликаты.")
+print("13. Дан список некоторых целых чисел, найдите значение 20 в нем и, если оно присутствует, замените его на 200. "
+      "Обновите список только при первом вхождении числа 20.")
+print("14. Необходимо удалить пустые строки из списка строк.")
+
+while True:
+    input_prak = input("Write a number of task: ")
+
+    if input_prak == "1":
+        prak1()
+    elif input_prak == "2":
+        prak2()
+    elif input_prak == "3":
+        prak3()
+    elif input_prak == "4":
+        prak4()
+    elif input_prak == "5":
+        prak5()
+    elif input_prak == "6":
+        prak6()
+    elif input_prak == "7":
+        prak7()
+    elif input_prak == "8":
+        prak8()
+    elif input_prak == "9":
+        prak9()
+    elif input_prak == "10":
+        prak10()
+    elif input_prak == "11":
+        prak11()
+    elif input_prak == "12":
+        prak12()
+    elif input_prak == "13":
+        prak13()
+    elif input_prak == "14":
+        prak14()
+    elif input_prak == "exit":
+        break
+    else:
+        print("You write wrong value!")
