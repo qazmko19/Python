@@ -63,8 +63,8 @@ conn.commit()
 
 def send_email(some_person):
     address_from = some_person.email
-    address_to = "nikitateslenko762@gmail.com"  # тут нужно указать свой почтовый адрес (отправка сообщений настроена на Gmail)
-    password = "qazmko10"  # тут нужно указать пароль от своего почтового ящика
+    address_to = ""  # тут нужно указать свой почтовый адрес (отправка сообщений настроена на Gmail)
+    password = ""  # тут нужно указать пароль от своего почтового ящика
 
     msg = MIMEMultipart()
     msg['From'] = address_from
